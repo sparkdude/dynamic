@@ -16,4 +16,18 @@ F0 = 0 and F1 = 1.
 PROBLEM: Create a program to calculate the fibonacci sequence up to a given number GREATER THAN 1000
 
 */
-texste
+
+function f(number) {
+  
+  if (number == 0) return 0;
+  if (number == 1) return 1;
+
+  let r;
+
+  r = f(number-1) + f(number-2);
+
+  return r;
+
+}
+
+console.log(f(100));

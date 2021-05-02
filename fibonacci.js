@@ -19,6 +19,7 @@ PROBLEM: Create a program to calculate the fibonacci sequence up to a given numb
 
 function f(number) {
   
+  if (number < 0) return "not possible";
   if (number < 2) return number;
 
   let r;
@@ -29,4 +30,4 @@ function f(number) {
 
 }
 
-console.log(f(100));
+console.log(f(-10));

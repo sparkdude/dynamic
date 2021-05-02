@@ -30,4 +30,4 @@ function f(number) {
 
 }
 
-console.log(f(-10));
+console.log(f(10));

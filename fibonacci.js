@@ -17,17 +17,31 @@ PROBLEM: Create a program to calculate the fibonacci sequence up to a given numb
 
 */
 
-function f(number) {
-  
+function f(number, memo={}) {
+  if (memo[number]) return memo[number]
   if (number < 0) return "not possible";
   if (number < 2) return number;
 
-  let r;
-
-  r = f(number-1) + f(number-2);
-
-  return r;
-
+  fib = f(number-1, memo) + f(number-2, memo);
+  // console.log('number', number, 'fib', fib)
+  // console.log('memo', memo)
+  return memo[number] = fib;
 }
 
-console.log(f(10));
+const f2 = (n, memo={}) => {
+  max_stack = 5000;
+  steps = (n / max_stack);
+  iteration = 0;
+  while (++iteration < steps) {
+    f(iteration*max_stack, memo)
+  }
+  return f(n, memo)
+}
+
+console.log(f2(1000));
+
+// var fib = [0, 1];
+// for(var i=fib.length; i<=10; i++) {
+//   fib[i] = fib[i-2] + fib[i-1];
+// }
+// console.log(fib); 

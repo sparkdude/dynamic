@@ -19,8 +19,7 @@ PROBLEM: Create a program to calculate the fibonacci sequence up to a given numb
 
 function f(number) {
   
-  if (number == 0) return 0;
-  if (number == 1) return 1;
+  if (number < 2) return number;
 
   let r;
 
